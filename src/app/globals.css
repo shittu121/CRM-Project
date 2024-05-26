@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.bg-auth{
+  background-position: center;
+  background-size: cover;
+
+  background-image: url("../../public/bg.JPG") !important;
+  width: 100%;
+  height: 100%;
+}
