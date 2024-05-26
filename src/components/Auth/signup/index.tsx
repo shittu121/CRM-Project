@@ -1,9 +1,24 @@
+"use client"
 import React from 'react'
 import Link from 'next/link';
+import { useState } from 'react';
+import { styles } from '@/utils/styles';
+
+type enteredValuesProp = {
+  email: string
+  password: string
+}
+
 export default function SignUp() {
+
+  const [enteredValues, setEnteredValues] = useState<enteredValuesProp> ({
+    email: "",
+    password: ""
+
+  })
   return (
     <div>
-      <div className="px-5 flex items-center justify-center min-h-screen bg-gray-100">
+      <div className={` px-5 flex items-center justify-center min-h-screen bg-gray-100`}>
         <div className="w-full max-w-md p-5 md:p-8 space-y-3 shadow-md bg-white rounded-lg">
           <h1 className="text-xl mb-7 font-semibold text-center">Sign Up</h1>
 
