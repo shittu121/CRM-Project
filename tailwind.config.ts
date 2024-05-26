@@ -26,6 +26,7 @@ const config: Config = {
 
       colors: {
         primary: "#033e7d",
+        btnColor: "#2663eb",
       },
     },
   },
