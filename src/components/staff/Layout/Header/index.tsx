@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link  from "next/link";
-import logo from "../../../../../public/logo1.png";
+// import logo from "../../../../../public/logo1.png";
 import DropDownUser from "../DropDownUser";
 import { useAllContx } from "@/store/AllContext";
 import DropdownNotification from "../DropdownNotification";
@@ -15,7 +15,7 @@ const Header = () => {
     const { sidebarOpen, setSidebarOpen } = useAllContx();
 
   return (
-    <header className="sticky  font-roboto top-0 z-999 flex w-full  bg-whitesmoke  drop-shadow-1 ">
+    <header className="sticky  font-roboto top-0 z-999 flex w-full  bg-gray-50  drop-shadow-1 ">
       <div className="flex flex-grow items-center justify-between px-4 py-5 shadow-2 md:px-6 2xl:px-11">
         <form action="" className="hidden md:block"></form>
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
@@ -59,9 +59,9 @@ const Header = () => {
             </span>
           </button>
 
-          <Link className="block flex-shrink-0 lg:hidden" href="/">
+          {/* <Link className="block flex-shrink-0 lg:hidden" href="/">
             <Image src={logo} width="70" height="70" alt="" />
-          </Link>
+          </Link> */}
         </div>
 
         <div className="flex items-center gap-3 2xsm:gap-7">

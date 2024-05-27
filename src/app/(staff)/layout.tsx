@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import SideBar from "@/components/company/Layout/SideBar";
-import Header from "@/components/company/Layout/Header";
+import Header from "@/components/staff/Layout/Header";
+import SideBar from "@/components/staff/Layout/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sight",
-  description: "Login",
+  description: "Staff",
 };
 
 export default function RootLayout({
