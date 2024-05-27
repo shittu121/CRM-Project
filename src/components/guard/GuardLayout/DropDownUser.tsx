@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import userOne from "../../../../public/user-01.png";
 import Image from "next/image";
-import { signOut } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 
 export default function DropDownUser() {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);

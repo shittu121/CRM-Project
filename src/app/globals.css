@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+.roboto {
+  font-family: var(--font_montserrat);
+}
 
 .bg-auth{
   background-position: center;

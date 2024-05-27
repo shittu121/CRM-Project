@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "../globals.css";
-import SideBar from "@/components/company/Layout/SideBar";
-import Header from "@/components/company/Layout/Header";
+import SideBar from "@/components/company/CompanyLayout/SideBar";
+import Header from "@/components/company/CompanyLayout/Header";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font_roboto",
+});
 
 export const metadata: Metadata = {
   title: "Sight",
@@ -19,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={``}>
+      <body className={`${roboto.variable}`}>
         <div className="flex h-screen overflow-hidden">
           <SideBar />
           <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
