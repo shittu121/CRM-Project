@@ -28,6 +28,9 @@ const config: Config = {
         primary: "#033e7d",
         btnColor: "#2663eb",
       },
+      fontFamily: {
+        roboto: ["var(--font_roboto)"],
+      },
     },
   },
   plugins: [],
