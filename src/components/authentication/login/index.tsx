@@ -5,6 +5,7 @@ import img from "/public/whitelogo.PNG";
 import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
+import Button from "@/components/UI/buton";
 interface loginValues {
   email: "";
   password: "";
@@ -85,23 +86,25 @@ export default function Login() {
             />
           </div>
           <div className="">
-            <button
+            <Button
+            disabled
+            isLoading
               type="submit"
               className="w-full px-4 py-2 text-white bg-btnColor rounded-md "
             >
               Sign in
-            </button>
+            </Button>
           </div>
           <div className="relative  flex justify-center text-sm text-gray-50">
             <span className="px-2 ">or</span>
           </div>
           <div>
-            <button
+            <Button
               type="button"
               className="w-full p-2 mb-1 text-white bg-black rounded-md hover:bg-red-600"
             >
               Sign in with Google
-            </button>
+            </Button>
           </div>
           <div className="flex flex-col justify-center text-sm">
             <div className="text-center underline text-white mb-3">

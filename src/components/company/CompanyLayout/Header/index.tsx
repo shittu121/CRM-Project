@@ -15,7 +15,7 @@ const Header = () => {
     const { sidebarOpen, setSidebarOpen } = useAllContx();
 
   return (
-    <header className="sticky  font-roboto top-0 z-999 flex w-full  bg-gray-50  drop-shadow-1 ">
+    <header className="sticky  font-roboto top-0 z-999 flex w-full  bg-white  drop-shadow-1 ">
       <div className="flex flex-grow items-center justify-between px-4 py-5 shadow-2 md:px-6 2xl:px-11">
         <form action="" className="hidden md:block"></form>
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">

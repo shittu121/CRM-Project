@@ -37,7 +37,7 @@ export default function DropDownUser() {
   });
 
   return (
-    <div className="relative">
+    <div className="relative font-roboto">
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -76,15 +76,15 @@ export default function DropDownUser() {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 flex w-[200px] flex-col rounded-sm  bg-whitesmoke  ${
+        className={`absolute right-0 mt-4 text-white  flex w-[200px] flex-col rounded-md  bg-primary  ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 border-b  px-6 py-7 dark:border-strokedark">
+        <ul className="flex flex-col gap-5 border-b  px-6 py-7 ">
           <li>
             <Link
               href="/profile"
-              className="flex items-center gap-3 text-sm duration-300 ease-in-out hover:text-emerald-deep lg:text-base"
+              className="flex items-center gap-3 text-sm duration-300 ease-in-out  lg:text-base"
             >
               <svg
                 className="fill-current"

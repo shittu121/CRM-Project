@@ -50,6 +50,48 @@ const LINKS = [
       </svg>
     ),
   },
+
+  {
+    name: "Clients",
+    url: "/clients",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 32 32"
+        style={{ marginLeft: "-4px" }}
+      >
+        <path
+          fill="currentColor"
+          d="M28.523 23.813c-.518-.51-6.795-2.938-7.934-3.396c-1.133-.45-1.585-1.697-1.585-1.697s-.51.282-.51-.51c0-.793.51.51 1.02-2.548c0 0 1.415-.397 1.134-3.68h-.34s.85-3.51 0-4.698c-.853-1.188-1.187-1.98-3.06-2.548c-1.87-.567-1.19-.454-2.548-.396c-1.36.057-2.492.793-2.492 1.188c0 0-.85.057-1.188.397c-.34.34-.906 
+        1.924-.906 2.32s.283 3.06.566 3.624l-.337.11c-.283 3.284 1.132 3.682 1.132 3.682c.51 
+        3.058 1.02 1.755 1.02 2.548c0 .792-.51.51-.51.51s-.453 1.246-1.585 1.697c-1.132.453-7.416 
+        2.887-7.927 3.396c-.51.52-.453 2.896-.453 2.896h12.036l.878-3.46l-.78-.78l1.343-1.345l1.343 
+        1.344l-.78.78l.878 3.46h12.036s.063-2.378-.453-2.897z"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Routes",
+    url: "/routes",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        style={{ marginLeft: "-4px" }}
+      >
+        <path
+          fill="currentColor"
+          d="M11 10H5L3 8l2-2h6V3l1-1l1 1v1h6l2 2l-2 2h-6v2h6l2 2l-2 
+        2h-6v6a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2z"
+        />
+      </svg>
+    ),
+  },
   {
     name: "Staff",
     url: "/staff",
@@ -74,74 +116,6 @@ const LINKS = [
           d="M33.17 21.47H28v2h4.17v8.37H18v-8.37h6.3v.42a1 
         1 0 0 0 2 0V20a1 1 0 0 0-2 0v1.47H17a1 1 0 0 0-1 
         1v10.37a1 1 0 0 0 1 1h16.17a1 1 0 0 0 1-1V22.47a1 1 0 0 0-1-1"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    name: "Clients",
-    url: "/clients",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 32 32"
-        style={{ marginLeft: "-4px" }}
-      >
-        <path
-          fill="currentColor"
-          d="M28.523 23.813c-.518-.51-6.795-2.938-7.934-3.396c-1.133-.45-1.585-1.697-1.585-1.697s-.51.282-.51-.51c0-.793.51.51 1.02-2.548c0 0 1.415-.397 1.134-3.68h-.34s.85-3.51 0-4.698c-.853-1.188-1.187-1.98-3.06-2.548c-1.87-.567-1.19-.454-2.548-.396c-1.36.057-2.492.793-2.492 1.188c0 0-.85.057-1.188.397c-.34.34-.906 
-        1.924-.906 2.32s.283 3.06.566 3.624l-.337.11c-.283 3.284 1.132 3.682 1.132 3.682c.51 
-        3.058 1.02 1.755 1.02 2.548c0 .792-.51.51-.51.51s-.453 1.246-1.585 1.697c-1.132.453-7.416 
-        2.887-7.927 3.396c-.51.52-.453 2.896-.453 2.896h12.036l.878-3.46l-.78-.78l1.343-1.345l1.343 
-        1.344l-.78.78l.878 3.46h12.036s.063-2.378-.453-2.897z"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    name: "Routes",
-    url: "/routes",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        style={{ marginLeft: "-4px" }}
-      >
-        <path
-          fill="currentColor"
-          d="M11 10H5L3 8l2-2h6V3l1-1l1 1v1h6l2 2l-2 2h-6v2h6l2 2l-2 
-        2h-6v6a2 2 0 0 1 2 2H9a2 2 0 0 1 2-2z"
-        />
-      </svg>
-    ),
-  },
-
-  {
-    name: "Reports",
-    url: "/reports",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        style={{ marginLeft: "-4px" }}
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 0 
-        1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 
-        1 0 0 1 .293.707V19a2 2 0 0 1-2 2"
         />
       </svg>
     ),
@@ -191,6 +165,30 @@ const LINKS = [
         64 28.7 64 64M64 192v-64h64c0 35.3-28.7 64-64 64m384 192c0-35.3 
         28.7-64 64-64v64zm64-192c-35.3 0-64-28.7-64-64h64zm-224-32a96 
         96 0 1 1 0 192a96 96 0 1 1 0-192"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Reports",
+    url: "/reports",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        style={{ marginLeft: "-4px" }}
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 0 
+        1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 
+        1 0 0 1 .293.707V19a2 2 0 0 1-2 2"
         />
       </svg>
     ),
@@ -254,7 +252,7 @@ export default function SideBar() {
            sidebarOpen ? "translate-x-0" : "-translate-x-full"
          }`}
       >
-        <div className="flex items-center justify-between gap-2 px-9 py-5 lg:py-6">
+        <div className="flex items-center justify-between gap-2 px-12 py-7 lg:py-6">
           {/* { <Link href="/">
             <Image
               src="/whitelogo.png"
@@ -291,15 +289,15 @@ export default function SideBar() {
         </div>
 
         <div className="  flex flex-col overflow-y-auto ">
-          <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-5">
-            <ul className="mb-6  flex flex-col gap-1.5">
+          <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-8">
+            <ul className="mb-6  flex flex-col gap-5">
               {LINKS.map((item, index) => (
                 <li key={index}>
                   {" "}
                   <Link
                     href={item.url}
-                    className={`group !text-base text-white   relative flex !items-center gap-2  py-4 px-4   duration-300 ease-in-out hover:bg-emerald-deep ${
-                      pathname === item.url && "underline"
+                    className={`group !text-base text-white  relative flex !items-center gap-2  py-2 px-4   duration-300 ease-in-out  ${
+                      pathname === item.url && " text-"
                     } `}
                   >
                     <span className="">{item.icon}</span>
