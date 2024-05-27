@@ -8,7 +8,7 @@ import img from "/public/whitelogo.PNG";
 import { toast } from 'sonner';
 
 type signupValues = {
-  email: string
+  email: string 
   fullName: string
   companyName: string
   password: string
