@@ -1,4 +1,4 @@
-import Stats from "@/components/company/dashboard/StatsCard/Stats";
+import Stats from "@/components/company/dashboard/stats/index.";
 import React from "react";
 
 import Dashboard from "@/components/company/dashboard";
