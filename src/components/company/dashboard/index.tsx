@@ -1,12 +1,12 @@
-import React from 'react'
-import Stats from './StatsCard/Stats'
-import Chart from './charts/Chart'
+import React from "react";
+import Stats from "./stats/index.";
+import Chart from "./charts";
 
 export default function Dashboard() {
   return (
     <div>
-        <Stats />
-        <Chart />
+      <Stats />
+      <Chart />
     </div>
-  )
+  );
 }

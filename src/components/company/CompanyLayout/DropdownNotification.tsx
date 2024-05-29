@@ -6,41 +6,49 @@ import { useAllContx } from '@/store/AllContext';
 
 const DropdownNotification = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [notifying, setNotifying] = useState(true);
+
 
   const {userInfo} = useAllContx()
   // console.log(userInfo);
   
 
-  const trigger = useRef<any>(null);
-  const dropdown = useRef<any>(null);
+  // const trigger = useRef<any>(null);
+  // const dropdown = useRef<any>(null);
 
-  useEffect(() => {
-    const clickHandler = ({ target }: MouseEvent) => {
-      if (!dropdown.current) return;
-      if (
-        !dropdownOpen ||
-        dropdown.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
-      setDropdownOpen(false);
-    };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
-  });
+  // useEffect(() => {
+  //   const clickHandler = ({ target }: MouseEvent) => {
+  //     if (!dropdown.current) return;
+  //     if (
+  //       !dropdownOpen ||
+  //       dropdown.current.contains(target) ||
+  //       trigger.current.contains(target)
+  //     )
+  //       return;
+  //     setDropdownOpen(false);
+  //   };
+  //   document.addEventListener('click', clickHandler);
+  //   return () => document.removeEventListener('click', clickHandler);
+  // });
 
   
 
   return (
-    <li className="relative font-roboto">
+    <li className="relative">
       <Link
-        ref={trigger}
-        onClick={() => setDropdownOpen(!dropdownOpen)}
+        onClick={() => {
+          setNotifying(false);
+          setDropdownOpen(!dropdownOpen);
+        }}
         href="#"
-        className="relative flex h-8 w-8 items-center justify-center rounded-full border-[0.5px] bg-white hover:text-emerald-deep "
+        className="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray "
       >
-        <span className="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full ">
-          <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
+        <span
+          className={`absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1 ${
+            notifying === false ? "hidden" : "inline"
+          }`}
+        >
+          <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
         </span>
 
         <svg
@@ -59,44 +67,76 @@ const DropdownNotification = () => {
       </Link>
 
       <div
-        ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute -right-[27px] mt-7 flex h-90 w-[250px] flex-col rounded-sm border border-stroke bg-white  py-3 px-5 md:right-0 md:w-80 ${
+        className={`absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80 ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
-        <div className="flex items-center gap-3">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 19 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.50493 16H17.5023C18.6204 16 19.3413 14.9018 18.8354 13.9735L10.8367 0.770573C10.2852 -0.256858 8.70677 -0.256858 8.15528 0.770573L0.156617 13.9735C-0.334072 14.8998 0.386764 16 1.50493 16ZM10.7585 12.9298C10.7585 13.6155 10.2223 14.1433 9.45583 14.1433C8.6894 14.1433 8.15311 13.6155 8.15311 12.9298V12.9015C8.15311 12.2159 8.6894 11.688 9.45583 11.688C10.2223 11.688 10.7585 12.2159 10.7585 12.9015V12.9298ZM8.75236 4.01062H10.2548C10.6674 4.01062 10.9127 4.33826 10.8671 4.75288L10.2071 10.1186C10.1615 10.5049 9.88572 10.7455 9.50142 10.7455C9.11929 10.7455 8.84138 10.5028 8.79579 10.1186L8.13574 4.75288C8.09449 4.33826 8.33984 4.01062 8.75236 4.01062Z"
-              fill="#FBBF24"
-            ></path>
-          </svg>
-          <h5 className=" md:text-[16px]  text-emerald-deep">
-            Action Required!
-          </h5>
+        <div className="px-4.5 py-3">
+          <h5 className="text-sm font-medium text-bodydark2">Notification</h5>
         </div>
-        <hr className='my-1'/>
 
-        <ul className="flex h-auto flex-col overflow-y-auto py-3">
-      {
-        userInfo?.tgUsername === null ?     <li className="">
-            <Link className="" href="#">
+        <ul className="flex h-auto flex-col overflow-y-auto">
+          <li>
+            <Link
+              className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:shadow-default"
+              href=""
+            >
               <p className="text-sm">
-                <span className="text-red-600">
-                  Update your Telegram username
+                <span className="text-black ">
+                  Edit your information in a swipe
                 </span>{" "}
+                Sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim.
               </p>
+
+              <p className="text-xs">12 May, 2025</p>
             </Link>
-          </li> : ""
-      }
+          </li>
+          <li>
+            <Link
+              className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:shadow-default"
+              href=""
+            >
+              <p className="text-sm">
+                <span className="text-black ">
+                  It is a long established fact
+                </span>{" "}
+                that a reader will be distracted by the readable.
+              </p>
+
+              <p className="text-xs">24 Feb, 2025</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:shadow-default"
+              href="/"
+            >
+              <p className="text-sm">
+                <span className="text-black ">There are many variations</span>{" "}
+                of passages of Lorem Ipsum available, but the majority have
+                suffered
+              </p>
+
+              <p className="text-xs">04 Jan, 2025</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:shadow-default"
+              href="/"
+            >
+              <p className="text-sm">
+                <span className="text-black">There are many variations</span> of
+                passages of Lorem Ipsum available, but the majority have
+                suffered
+              </p>
+
+              <p className="text-xs">01 Dec, 2024</p>
+            </Link>
+          </li>
         </ul>
       </div>
     </li>
