@@ -49,7 +49,7 @@ export default function VehiclePage() {
 
   function handleCloseEditForm() {
     setIsEditFormVisible(false);
-    setEditVehicleIndex(null);
+    setEditVehicleIndex(null); 
   }
 
   function handleButtonViewVehicle(index) {
@@ -71,7 +71,7 @@ export default function VehiclePage() {
   };
 
   return (
-    <div className="p-4">
+    <div className="">
       <div className="absolute right-0 top-0 z-99999">
         {isEntryFormVisible && (
           <>
@@ -125,8 +125,8 @@ export default function VehiclePage() {
         )}
       </div>
       <h1 className="font-bold text-2xl text-center">Company Vehicles</h1>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <div className="pb-4 mt-4 bg-white dark:bg-gray-900 flex flex-col sm:flex-row justify-between">
+      <div className="relative overflow-x-auto shadow-default border p-4 sm:rounded-lg">
+        <div className="pb-4 mt-4 bg-white flex flex-col sm:flex-row justify-between">
           <button
             onClick={handleButtonNewEntry}
             isLoading={true}
@@ -137,7 +137,7 @@ export default function VehiclePage() {
           <div className="relative mt-4 sm:mt-0 mx-2 w-full sm:w-auto">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4 text-gray-500 d"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -161,7 +161,7 @@ export default function VehiclePage() {
           </div>
         </div>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs uppercase bg-primary text-white dark:text-gray-400">
+          <thead className="text-xs uppercase bg-primary text-white ">
             <tr>
               <th scope="col" className="pl-4 py-3">License Plate</th>
               <th scope="col" className="pl-6 py-3">Make</th>
@@ -174,14 +174,14 @@ export default function VehiclePage() {
           </thead>
           <tbody>
             {vehicles.map((vehicle, index) => (
-              <tr key={index} className={`bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ${vehicle.isDisabled ? 'opacity-50' : ''}`}>
-                <th scope="row" className={`px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.licensePlate}</th>
-                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-30 dark:text-white ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.make}</td>
-                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-30 dark:text-white ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.model}</td>
-                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.year}</td>
+              <tr key={index} className={`bg-white border-b   hover:bg-gray-50  ${vehicle.isDisabled ? 'opacity-50' : ''}`}>
+                <th scope="row" className={`px-4 py-4 font-medium text-gray-900 whitespace-nowrap  ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.licensePlate}</th>
+                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-30  ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.make}</td>
+                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-30 d ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.model}</td>
+                <td className={`pl-6 py-4 font-medium text-gray-900 whitespace-nowrap ${vehicle.isDisabled ? 'text-gray-500' : ''}`}>{vehicle.year}</td>
                 <td className="py-4">
                   <div className="flex justify-center">
-                    <input id={`checkbox-${index}`} type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" checked={vehicle.servicedRequired} readOnly disabled={vehicle.isDisabled} />
+                    <input id={`checkbox-${index}`} type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 " checked={vehicle.servicedRequired} readOnly disabled={vehicle.isDisabled} />
                     <label htmlFor={`checkbox-${index}`} className="sr-only">checkbox</label>
                   </div>
                 </td>
