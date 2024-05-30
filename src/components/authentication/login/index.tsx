@@ -79,10 +79,16 @@ export default function Login() {
               placeholder="JohnDoe@gmail.com"
               className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
             /> */}
-            <Input onChange={handleOnchange} name="email" label="Email" />
+            <Input
+              className="border-stroke text-white"
+              onChange={handleOnchange}
+              name="email"
+              label="Email"
+            />
           </div>
           <div className="">
             <Input
+              className="border-stroke text-white"
               name="password"
               onChange={handleOnchange}
               isPassword={true}
@@ -100,7 +106,7 @@ export default function Login() {
             </Button>
           </div>
           <div className="relative  flex justify-center text-sm text-gray-50">
-            <span className="px-2 ">or</span>
+            <span className="px-2 text-white ">or</span>
           </div>
           <div>
             <Button

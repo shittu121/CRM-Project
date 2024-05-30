@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`bg-btnColor hover:bg-emerald-light py-2 px-4 rounded-md text-white text-base font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`bg-btnColor hover:bg-emerald-light py-2 px-4 rounded-md text-white text-base font-medium  transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
       {...props}
     >
       {isLoading && (

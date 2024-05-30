@@ -80,7 +80,7 @@ export default function DropDownUser() {
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col gap-5 border-b  px-6 py-7 ">
+        <ul className="flex flex-col gap-5 border-b border-stroke  px-6 py-7 ">
           <li>
             <Link
               href="/profile"
