@@ -124,7 +124,7 @@ export default function VehiclePage() {
           </div>
         )}
       </div>
-      <h1 className="font-bold text-2xl text-center">Company Vehicles</h1>
+      <h1 className="font-bold text-2xl -mt-2">Company Vehicles</h1>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className="pb-4 mt-4 bg-white dark:bg-gray-900 flex flex-col sm:flex-row justify-between">
           <button
