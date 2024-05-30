@@ -108,14 +108,14 @@ export default function VehiclePage() {
         )}
          
         {isViewVehicleFormVisible && (
-          <div className="absolute right-6 top-3 bottom-3 z-99999">
+          <div className="absolute right-19 top-3 bottom-3 z-99999">
             <ViewVehicleform vehicle={vehicles[viewVehicleIndex]} />
             <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="18" 
             height="18" 
             viewBox="0 0 24 24"
-            className='absolute top-3 ml-5 left-0'
+            className='absolute top-3 mr-5 right-0'
             onClick={handleCloseViewVehicle}
             style={{ cursor: 'pointer' }}
           >
