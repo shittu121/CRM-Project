@@ -6,6 +6,8 @@ import { styles } from '@/utils/styles';
 import Image from 'next/image';
 import img from "/public/whitelogo.PNG";
 import { toast } from 'sonner';
+import Input from '@/components/UI/input';
+import Button from '@/components/UI/buton';
 
 type signupValues = {
   email: string 
@@ -24,6 +26,7 @@ export default function SignUp() {
     companyName: "",
     confirmPassword: ""
   });
+    const [isLoading, setIsLoading] = useState<boolean>(false);
   const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
@@ -33,21 +36,21 @@ export default function SignUp() {
   const formSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // if (
-    //   enteredValues.email.trim().length === 0 ||
-    //   enteredValues.password.trim().length === 0
-    // ) {
-    //   toast.error("Please fill empty field", {
-    //     classNames: {
-    //       toast: "bg-red-500",
-    //       title: "text-white",
-    //       description: "text-red-400",
+    if (
+      enteredValues.email.trim().length === 0 ||
+      enteredValues.password.trim().length === 0 || enteredValues.companyName.trim().length === 0
+    ) {
+      toast.error("Please fill empty field", {
+        classNames: {
+          toast: "bg-red-500",
+          title: "text-white",
+          description: "text-red-400",
 
-    //       icon: "text-red-500",
-    //     },
-    //   });
-    //   return;
-    // }
+          icon: "text-red-500",
+        },
+      });
+      return;
+    }
 
     console.log(enteredValues);
   };
@@ -71,87 +74,51 @@ export default function SignUp() {
           </h1> */}
 
           <form onSubmit={formSubmitHandler} className="space-y-6">
-            {/* <div>
-              <label className="block mb-1 text-sm font-medium text-white">
-                Full Name
-              </label>
-              <input
-                type="text"
-                required
-                placeholder="Your Name"
-                className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
-              />
-            </div> */}
+         
             <div>
-              <label className="block mb-2 text-sm font-medium text-white">
-                Email
-              </label>
-              <input
+              <Input
                 onChange={handleOnchange}
-                type="email"
                 name="email"
-                placeholder="JohnDoe@gmail.com"
-                className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
+                label="Email"
               />
             </div>
 
             <div>
-              <label className="block mb-2 text-sm font-medium text-white">
-                Company Name
-              </label>
-              <input
-                type="text"
+              <Input
+                onChange={handleOnchange}
                 name="companyName"
-                onChange={handleOnchange}
-                placeholder="Google"
-                className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
+                label="Company Name"
               />
             </div>
             <div>
-              <label className="block mb-2 text-sm font-medium text-white">
-                Password
-              </label>
-              <input
-                type="password"
-                name='password'
+              <Input
                 onChange={handleOnchange}
-                placeholder="Tu64858$%^&"
-                className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
+                name="password"
+                label="Password"
+                isPassword={true}
               />
             </div>
 
             <div>
-              <label className="block mb-2 text-sm font-medium text-white">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                name='confirmPassword'
+              <Input
                 onChange={handleOnchange}
-                placeholder="Tu64858$%^&"
-                className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
+                name="confirmPassword"
+                label="Confirm Password"
+                isPassword={true}
               />
             </div>
 
             <div className="">
-              <button
+              <Button
+              disabled={isLoading}
+                isLoading={isLoading}
                 type="submit"
                 className="w-full px-4 py-2 text-white bg-btnColor rounded-md"
               >
                 Sign Up
-              </button>
+              </Button>
             </div>
-            {/* <div className="relative !my-1 flex justify-center text-sm text-gray-500">
-              <span className="px-2 ">or</span>
-            </div> */}
-            {/* <div>
-              <button
-                type="button"
-                className="w-full p-2 mb-1 text-white bg-black rounded-lg hover:bg-red-600"
-              >
-                Sign up with Google
-              </button>
-            </div> */}
+
             <div className="flex text-white flex-col justify-center text-sm">
               <div className="text-center mb-3">
                 {" "}

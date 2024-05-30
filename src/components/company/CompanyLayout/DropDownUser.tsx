@@ -76,7 +76,7 @@ export default function DropDownUser() {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4  flex w-[200px] flex-col rounded-md bg-meta-2 shadow-default ${
+        className={`absolute right-0 mt-4  flex w-[200px] flex-col border border-stroke bg-white shadow-default ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >
@@ -107,9 +107,13 @@ export default function DropDownUser() {
             </Link>
           </li>
         </ul>
-        <button onClick={()=> {
-          localStorage.removeItem("token")
-          signOut()}} className="flex items-center gap-3 py-4 px-6 text-sm  duration-300 ease-in-out hover:text-emerald-deep lg:text-base">
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            signOut();
+          }}
+          className="flex items-center gap-3 py-4 px-6 text-sm  duration-300 ease-in-out hover:text-emerald-deep lg:text-base"
+        >
           <svg
             className="fill-current"
             width="22"

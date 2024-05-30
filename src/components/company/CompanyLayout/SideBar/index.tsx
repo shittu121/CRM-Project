@@ -296,8 +296,8 @@ export default function SideBar() {
                   {" "}
                   <Link
                     href={item.url}
-                    className={`roup relative flex items-center gap-2.5 rounded-sm px-4 py-2  text-white duration-300 ease-in-out hover:bg-white hover:text-black ${
-                      pathname === item.url && "!text-black bg-white"
+                    className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2  text-white duration-300 ease-in-out hover:bg-[#ffffffe1] hover:text-black ${
+                      pathname === item.url && "!text-black bg-[#ffffffe1]"
                     } `}
                   >
                     <span className="">{item.icon}</span>

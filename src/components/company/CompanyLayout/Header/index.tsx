@@ -68,7 +68,7 @@ const Header = () => {
             <div className="relative">
               <button className="absolute left-0 top-1/2 -translate-y-1/2">
                 <svg
-                  className="fill-body hover:fill-primary"
+                  className="fill-black"
                   width="20"
                   height="20"
                   viewBox="0 0 20 20"
