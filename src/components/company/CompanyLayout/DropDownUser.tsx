@@ -76,7 +76,7 @@ export default function DropDownUser() {
         ref={dropdown}
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
-        className={`absolute right-0 mt-4 text-white  flex w-[200px] flex-col rounded-md  bg-primary  ${
+        className={`absolute right-0 mt-4  flex w-[200px] flex-col rounded-md bg-meta-2 shadow-default ${
           dropdownOpen === true ? "block" : "hidden"
         }`}
       >

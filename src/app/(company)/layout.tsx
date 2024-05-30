@@ -5,6 +5,7 @@ import SideBar from "@/components/company/CompanyLayout/SideBar";
 import Header from "@/components/company/CompanyLayout/Header";
 
 
+
 const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body className={`${roboto.variable}`}>
         <div className="flex h-screen overflow-hidden">
           <SideBar />
-          <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+          <div className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
             <Header />
             <main className="h-screen">
               <div className="mx-auto max-w-screen-2xl  p-4 md:p-5 2xl:p-7">
