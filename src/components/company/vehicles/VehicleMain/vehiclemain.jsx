@@ -155,7 +155,7 @@ export default function VehiclePage() {
             <input
               type="text"
               id="table-search"
-              className="block text-meta-2 bg-form-input p-2 pl-10 text-sm border border-gray-300 rounded-lg w-full sm:w-80 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block bg-gray-300 p-2 text-black pl-10 text-sm border border-gray-300 rounded-lg w-full sm:w-80 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search for items"
             />
           </div>
