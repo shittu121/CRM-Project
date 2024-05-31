@@ -263,7 +263,7 @@ export default function SideBar() {
             />
        
           </Link> } */}
-          <div className="">
+          <div className="px-3">
             <h1 className=" text-white text-4xl font-semibold">SIGHT</h1>
           </div>
 
