@@ -17,13 +17,8 @@ interface ViewDetailsProps {
 
 const ViewDetails: React.FC<ViewDetailsProps> = ({ vehicle }) => {
   return (
-<<<<<<<< HEAD:src/components/company/vehicles/ViewVehicle/ViewDetails.tsx
-    <div className='bg-gray-300 h-[95vh] w-[71rem]'>
+    <div className='bg-whiten h-[95vh] w-[71rem]'>
       <h1 className='font-bold pt-2 text-3xl mx-4'>{vehicle.licensePlate}</h1> 
-========
-    <div className='bg-whiten h-[95vh] w-[71rem] p-10'>
-      <h1 className='font-bold pt-2 text-3xl mx-4'>License Plate</h1> 
->>>>>>>> main:src/components/company/vehicles/ViewVehicle/index.tsx
 
       <div className="flex gap-13 font-bold text-sm">
         <div className="left w-full">

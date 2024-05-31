@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import Button from '@/components/UI/buton'
-import Entryform from '@/components/company/vehicles/NewEntryForm/entryform';
-import Editform from '@/components/company/vehicles/EditEntryForm/editform';
-import ViewVehicleform from '@/components/company/vehicles/ViewVehicle/ViewDetails'
+import Entryform from '@/components/company/vehicles/NewEntryForm/index';
+import Editform from '@/components/company/vehicles/EditEntryForm/index';
+import ViewVehicleform from '@/components/company/vehicles/ViewVehicle/index'
 
 interface Vehicle {
   licensePlate: string;
