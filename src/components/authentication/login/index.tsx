@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
 import Button from "@/components/UI/buton";
+import Input from "@/components/UI/input";
 interface loginValues {
   email: "";
   password: "";
@@ -15,6 +16,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
@@ -23,11 +25,14 @@ export default function Login() {
 
   const formSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true)
 
     if (
       enteredValues.email.trim().length === 0 ||
       enteredValues.password.trim().length === 0
     ) {
+
+      setIsLoading(false)
       toast.error("Please fill empty field", {
         classNames: {
           toast: "bg-red-500",
@@ -39,6 +44,8 @@ export default function Login() {
       });
       return;
     }
+  
+   
 
     console.log(enteredValues);
   };
@@ -62,7 +69,7 @@ export default function Login() {
 
         <form onSubmit={formSubmitHandler} className="space-y-6">
           <div>
-            <label className="block mb-2 text-sm font-medium text-white">
+            {/* <label className="block mb-2 text-sm font-medium text-white">
               Email
             </label>
             <input
@@ -71,24 +78,21 @@ export default function Login() {
               name="email"
               placeholder="JohnDoe@gmail.com"
               className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
-            />
+            /> */}
+            <Input onChange={handleOnchange} name="email" label="Email" />
           </div>
           <div className="">
-            <label className="block mb-2 text-sm font-medium text-white">
-              Password
-            </label>
-            <input
-              onChange={handleOnchange}
+            <Input
               name="password"
-      
-              placeholder="Tu64858$%^&"
-              className="w-full px-3 py-2 bg-transparent focus:ring-blue-500 focus:ring-[3px] text-white border   border-white rounded-md outline-none ease-linear duration-75"
+              onChange={handleOnchange}
+              isPassword={true}
+              label="Password"
             />
           </div>
           <div className="">
             <Button
-            disabled
-            isLoading
+              disabled={isLoading}
+              isLoading={isLoading}
               type="submit"
               className="w-full px-4 py-2 text-white bg-btnColor rounded-md "
             >
@@ -107,8 +111,8 @@ export default function Login() {
             </Button>
           </div>
           <div className="flex flex-col justify-center text-sm">
-            <div className="text-center underline text-white mb-3">
-              <Link className=" underline" href="/sign-up" legacyBehavior>
+            <div className="text-center hover:underline text-white mb-3">
+              <Link className=" " href="/sign-up" legacyBehavior>
                 Sign Up
               </Link>
             </div>
