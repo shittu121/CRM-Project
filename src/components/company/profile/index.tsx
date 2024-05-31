@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image'; 
+import Image from 'next/image';
 import avatar from '../../../../public/user-01.png';
 
 const user = {
@@ -40,14 +40,14 @@ const user = {
 
 const Profile: React.FC = () => {
   return (
-    <div className="flex flex-col items-start min-h-screen bg-gray-100 p-8">
+    <div className="flex flex-col items-start min-h-screen bg-meta-2 p-8">
       <h2 className="text-2xl font-semibold mb-6">My Profile</h2>
-      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-6xl">
+      <div className="bg-white rounded-lg shadow-default p-8 w-full max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Personal Details */}
           <div>
             <h3 className="text-xl font-semibold mb-2">Personal Details</h3>
-            <hr className="border-t border-gray-300 mb-4" />
+            <hr className="border-t border-meta-9 mb-4" />
             <div className="flex items-start mb-8">
               <Image src={user.avatarUrl} alt={`${user.name}'s avatar`} className="w-32 h-32 rounded-full mr-6" />
               <div>
@@ -65,22 +65,22 @@ const Profile: React.FC = () => {
 
             {/* Account Details */}
             <h3 className="text-xl font-semibold mb-2">Account Details</h3>
-            <hr className="border-t border-gray-300 mb-4" />
+            <hr className="border-t border-meta-9 mb-4" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <p><strong>Account Type:</strong> {user.accountType}</p>
-              <p><strong>Account Number:</strong> {user.accountNumber}</p>
-              <p><strong>Bank Name:</strong> {user.bankName}</p>
-              <p><strong>Branch Name:</strong> {user.branchName}</p>
-              <p><strong>MICR Code:</strong> {user.micrCode}</p>
-              <p><strong>IFSC Code:</strong> {user.ifscCode}</p>
-              <p><strong>Effective From:</strong> {user.effectiveFrom}</p>
+              <p className="text-lg"><strong>Account Type:</strong> {user.accountType}</p>
+              <p className="text-lg"><strong>Account Number:</strong> {user.accountNumber}</p>
+              <p className="text-lg"><strong>Bank Name:</strong> {user.bankName}</p>
+              <p className="text-lg"><strong>Branch Name:</strong> {user.branchName}</p>
+              <p className="text-lg"><strong>MICR Code:</strong> {user.micrCode}</p>
+              <p className="text-lg"><strong>IFSC Code:</strong> {user.ifscCode}</p>
+              <p className="text-lg"><strong>Effective From:</strong> {user.effectiveFrom}</p>
             </div>
           </div>
 
-          <div className="border-l pl-8">
+          <div className="border-l border-meta-9 pl-8">
             {/* Reporting Structure */}
             <h3 className="text-xl font-semibold mb-2">Reporting Structure</h3>
-            <hr className="border-t border-gray-300 mb-4" />
+            <hr className="border-t border-meta-9 mb-4" />
             <div className="flex items-start mb-8">
               <Image src={user.avatarUrl} alt={`${user.reportingTo.name}'s avatar`} className="w-16 h-16 rounded-full mr-4" />
               <div>
@@ -93,12 +93,12 @@ const Profile: React.FC = () => {
 
             {/* Documents Download */}
             <h3 className="text-xl font-semibold mb-2">Documents Download</h3>
-            <hr className="border-t border-gray-300 mb-4" />
+            <hr className="border-t border-meta-9 mb-4" />
             {user.documents.map((doc, index) => (
               <div key={index} className="flex items-center mb-4">
-                <p className="flex-grow"><strong>{doc.name}</strong></p>
-                <a href={doc.downloadUrl} className="text-blue-500 mr-4">Download</a>
-                <a href={doc.viewUrl} className="text-blue-500">View</a>
+                <p className="flex-grow text-lg"><strong>{doc.name}</strong></p>
+                <a href={doc.downloadUrl} className="text-btnColor mr-4">Download</a>
+                <a href={doc.viewUrl} className="text-btnColor">View</a>
               </div>
             ))}
           </div>
