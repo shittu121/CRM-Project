@@ -1,10 +1,21 @@
 "use client";
 import React, { useState } from 'react';
+import Button from '@/components/UI/buton'
 import Entryform from '@/components/company/vehicles/NewEntryForm/entryform';
 import Editform from '@/components/company/vehicles/EditEntryForm/editform';
 import ViewVehicleform from '@/components/company/vehicles/ViewVehicle/ViewDetails'
 
-const initialVehicles = [
+interface Vehicle {
+  licensePlate: string;
+  make: string;
+  model: string;
+  year: number;
+  servicedRequired: boolean;
+  notes: string;
+  isDisabled: boolean;
+}
+
+const initialVehicles: Vehicle[] = [
   {
     licensePlate: "ABZ 123",
     make: "Test Make",
@@ -26,13 +37,14 @@ const initialVehicles = [
   // Add more vehicle objects as needed
 ];
 
+
 export default function VehiclePage() {
-  const [vehicles, setVehicles] = useState(initialVehicles);
+  const [vehicles, setVehicles] = useState<Vehicle[]>(initialVehicles);
   const [isEntryFormVisible, setIsEntryFormVisible] = useState(false);
   const [isEditFormVisible, setIsEditFormVisible] = useState(false);
   const [isViewVehicleFormVisible, setIsViewVehicleFormVisible] = useState(false);
-  const [editVehicleIndex, setEditVehicleIndex] = useState(null);
-  const [viewVehicleIndex, setViewVehicleIndex] = useState(null);
+  const [editVehicleIndex, setEditVehicleIndex] = useState<number | null>(null);
+  const [viewVehicleIndex, setViewVehicleIndex] = useState<number | null>(null);
 
   function handleButtonNewEntry() {
     setIsEntryFormVisible(true);
@@ -42,7 +54,7 @@ export default function VehiclePage() {
     setIsEntryFormVisible(false);
   }
 
-  function handleButtonEditEntry(index) {
+  function handleButtonEditEntry(index: number) {
     setEditVehicleIndex(index);
     setIsEditFormVisible(true);
   }
@@ -52,8 +64,8 @@ export default function VehiclePage() {
     setEditVehicleIndex(null);
   }
 
-  function handleButtonViewVehicle(index) {
-    setViewVehicleIndex(index)
+  function handleButtonViewVehicle(index: number) {
+    setViewVehicleIndex(index);
     setIsViewVehicleFormVisible(true);
   }
 
@@ -62,7 +74,7 @@ export default function VehiclePage() {
     setViewVehicleIndex(null);
   }
 
-  const toggleDisable = (index) => {
+  const toggleDisable = (index: number) => {
     setVehicles((prevVehicles) =>
       prevVehicles.map((vehicle, i) =>
         i === index ? { ...vehicle, isDisabled: !vehicle.isDisabled } : vehicle
@@ -92,7 +104,7 @@ export default function VehiclePage() {
 
         {isEditFormVisible && (
           <>
-            <Editform vehicle={vehicles[editVehicleIndex]} />
+            <Editform vehicle={vehicles[editVehicleIndex!]} />
             <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="18" 
@@ -109,7 +121,7 @@ export default function VehiclePage() {
          
         {isViewVehicleFormVisible && (
           <div className="absolute right-19 top-3 bottom-3 z-99999">
-            <ViewVehicleform vehicle={vehicles[viewVehicleIndex]} />
+            <ViewVehicleform vehicle={vehicles[viewVehicleIndex!]} />
             <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="18" 
@@ -127,13 +139,12 @@ export default function VehiclePage() {
       <h1 className="font-bold text-2xl -mt-2">Company Vehicles</h1>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className="pb-4 mt-4 bg-white dark:bg-gray-900 flex flex-col sm:flex-row justify-between">
-          <button
+          <Button
             onClick={handleButtonNewEntry}
-            isLoading={true}
             className="bg-btnColor hover:bg-emerald-light py-2 px-4 rounded-md text-white text-base font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mx-2"
           >
             New Entry
-          </button>
+          </Button>
           <div className="relative mt-4 sm:mt-0 mx-2 w-full sm:w-auto">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -190,20 +201,20 @@ export default function VehiclePage() {
                     <path fill={vehicle.notes ? "#ff8585" : "#000000"} d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208s208-93.31 208-208S370.69 48 256 48m0 319.91a20 20 0 1 1 20-20a20 20 0 0 1-20 20m21.72-201.15l-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"/>
                   </svg>
                 </td>
-                <td className="px-6 py-4 grid grid-cols-4 gap-8 lg:gap-2">
-                  <button
-                    className="bg-btnColor hover:bg-emerald-light py-2 px-6 lg:px-4  rounded-md text-xs lg:text-sm text-white font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1"
+                <td className="px-6 py-4 grid grid-cols-4 gap-8 lg:gap-3">
+                  <Button
+                    className="bg-btnColor px-6.5 hover:bg-emerald-light rounded-md text-xs lg:text-sm text-white font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1"
                     onClick={() => handleButtonEditEntry(index)}
                     disabled={vehicle.isDisabled}
                   >
                     Edit
-                  </button>
-                  <button className="bg-red-600 hover:bg-red-700 py-2 px-6 lg:px-4 rounded-md text-white text-xs lg:text-sm font-medium border border-red-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" disabled={vehicle.isDisabled}>Delete</button>
-                  <button className="bg-green-600 hover:bg-green-700 py-2 px-6 lg:px-4 rounded-md text-white text-xs lg:text-sm font-medium border border-green-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" 
+                  </Button>
+                  <Button className="bg-red-600 px-6.5 hover:bg-red-700 rounded-md text-white text-xs lg:text-sm font-medium border border-red-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" disabled={vehicle.isDisabled}>Delete</Button>
+                  <Button className="bg-green-600 px-6.5 hover:bg-green-700 rounded-md text-white text-xs lg:text-sm font-medium border border-green-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" 
                     onClick={() => handleButtonViewVehicle(index)}
                     disabled={vehicle.isDisabled}>View
-                  </button>
-                  <button className={`py-2 px-6 lg:px-4 rounded-md text-white col-span-2 lg:col-span-1 text-xs lg:text-sm font-medium border transition ${vehicle.isDisabled ? 'bg-gray-500 border-gray-500' : 'bg-red-600 border-red-600 hover:bg-red-700'} flex items-center justify-center`} onClick={() => toggleDisable(index)}>{vehicle.isDisabled ? 'Enable' : 'Disable'}</button>
+                  </Button>
+                  <Button className={`rounded-md text-white col-span-2 px-6.5 lg:col-span-1 text-xs lg:text-sm font-medium border transition ${vehicle.isDisabled ? 'bg-gray-500 border-gray-500' : 'bg-red-600 border-red-600 hover:bg-red-700'} flex items-center justify-center`} onClick={() => toggleDisable(index)}>{vehicle.isDisabled ? 'Enable' : 'Disable'}</Button>
                 </td>
               </tr>
             ))}
