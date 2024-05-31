@@ -39,3 +39,5 @@ const DropdownMenu: React.FC = () => {
     </div>
   );
 };
+
+export default DropdownMenu
