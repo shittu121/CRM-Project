@@ -124,7 +124,7 @@ export default function VehiclePage() {
           </div>
         )}
       </div>
-      <h1 className="font-bold text-2xl text-center">Company Vehicles</h1>
+      <h1 className="font-bold text-2xl -mt-2">Company Vehicles</h1>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div className="pb-4 mt-4 bg-white dark:bg-gray-900 flex flex-col sm:flex-row justify-between">
           <button
@@ -155,19 +155,19 @@ export default function VehiclePage() {
             <input
               type="text"
               id="table-search"
-              className="block text-meta-2 bg-form-input p-2 pl-10 text-sm border border-gray-300 rounded-lg w-full sm:w-80 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block bg-gray-300 p-2 text-black pl-10 text-sm border border-gray-300 rounded-lg w-full sm:w-80 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search for items"
             />
           </div>
         </div>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs uppercase bg-primary text-white dark:text-gray-400">
+          <thead className="text-xs lg:text-sm bg-primary gap-4 lg:gap-0 text-white dark:text-gray-400">
             <tr>
-              <th scope="col" className="pl-4 py-3">License Plate</th>
+              <th scope="col" className="pl-4 pr-4 py-3 whitespace-nowrap">License Plate</th>
               <th scope="col" className="pl-6 py-3">Make</th>
               <th scope="col" className="pl-6 py-3">Model</th>
               <th scope="col" className="pl-6 py-3">Year</th>
-              <th scope="col" className="py-3 px-3 text-center">Serviced Required</th>
+              <th scope="col" className="py-3 px-3 text-center whitespace-nowrap">Serviced Required</th>
               <th scope="col" className="pl-6 py-3">Notes</th>
               <th scope="col" className="px-6 py-3">Actions</th>
             </tr>
@@ -190,20 +190,20 @@ export default function VehiclePage() {
                     <path fill={vehicle.notes ? "#ff8585" : "#000000"} d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208s208-93.31 208-208S370.69 48 256 48m0 319.91a20 20 0 1 1 20-20a20 20 0 0 1-20 20m21.72-201.15l-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0Z"/>
                   </svg>
                 </td>
-                <td className="px-6 py-4 grid grid-cols-4 gap-4 lg:gap-2">
+                <td className="px-6 py-4 grid grid-cols-4 gap-8 lg:gap-2">
                   <button
-                    className="bg-btnColor hover:bg-emerald-light py-2 px-4 rounded-md text-white text-base font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1"
+                    className="bg-btnColor hover:bg-emerald-light py-2 px-6 lg:px-4  rounded-md text-xs lg:text-sm text-white font-medium border border-btnColor transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1"
                     onClick={() => handleButtonEditEntry(index)}
                     disabled={vehicle.isDisabled}
                   >
                     Edit
                   </button>
-                  <button className="bg-red-600 hover:bg-red-700 py-2 px-4 rounded-md text-white text-base font-medium border border-red-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" disabled={vehicle.isDisabled}>Delete</button>
-                  <button className="bg-green-600 hover:bg-green-700 py-2 px-4 rounded-md text-white text-base font-medium border border-green-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" 
+                  <button className="bg-red-600 hover:bg-red-700 py-2 px-6 lg:px-4 rounded-md text-white text-xs lg:text-sm font-medium border border-red-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" disabled={vehicle.isDisabled}>Delete</button>
+                  <button className="bg-green-600 hover:bg-green-700 py-2 px-6 lg:px-4 rounded-md text-white text-xs lg:text-sm font-medium border border-green-600 transition hover:opacity-90 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed mr-3 col-span-2 lg:col-span-1" 
                     onClick={() => handleButtonViewVehicle(index)}
                     disabled={vehicle.isDisabled}>View
                   </button>
-                  <button className={`py-2 px-4 rounded-md text-white text-base font-medium border transition ${vehicle.isDisabled ? 'bg-gray-500 border-gray-500' : 'bg-red-600 border-red-600 hover:bg-red-700'} flex items-center justify-center`} onClick={() => toggleDisable(index)}>{vehicle.isDisabled ? 'Enable' : 'Disable'}</button>
+                  <button className={`py-2 px-6 lg:px-4 rounded-md text-white col-span-2 lg:col-span-1 text-xs lg:text-sm font-medium border transition ${vehicle.isDisabled ? 'bg-gray-500 border-gray-500' : 'bg-red-600 border-red-600 hover:bg-red-700'} flex items-center justify-center`} onClick={() => toggleDisable(index)}>{vehicle.isDisabled ? 'Enable' : 'Disable'}</button>
                 </td>
               </tr>
             ))}

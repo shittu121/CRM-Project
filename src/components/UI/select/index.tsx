@@ -50,7 +50,7 @@ const Select = ({ options, value, label, onChange }: SelectProps) => {
       <div className="relative" ref={selectRef}>
         <button
           type="button"
-          className="w-full px-4 py-2 text-left bg-white border border-gray-300 rounded-md w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary flex items-center justify-between"
+          className="w-full px-4 py-2 text-left bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary flex items-center justify-between"
           onClick={() => setIsOpen(!isOpen)}
         >
           {options.find((option) => option.value === value)?.label ??
