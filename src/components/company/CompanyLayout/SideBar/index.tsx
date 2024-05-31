@@ -14,8 +14,8 @@ const LINKS = [
     icon: (
       <svg
         className="fill-current"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 18 18"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +34,8 @@ const LINKS = [
       <svg
         className="fill-current"
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         style={{ marginLeft: "-4px" }}
       >
@@ -57,8 +57,8 @@ const LINKS = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 32 32"
         style={{ marginLeft: "-4px" }}
       >
@@ -79,8 +79,8 @@ const LINKS = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         style={{ marginLeft: "-4px" }}
       >
@@ -98,8 +98,8 @@ const LINKS = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 36 36"
         style={{ marginLeft: "-4px" }}
       >
@@ -127,8 +127,8 @@ const LINKS = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         style={{ marginLeft: "-4px" }}
       >
@@ -153,7 +153,7 @@ const LINKS = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"
-        height="15"
+        height="18"
         viewBox="0 0 576 512"
         style={{ marginLeft: "-4px" }}
       >
@@ -175,8 +175,8 @@ const LINKS = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         style={{ marginLeft: "-4px" }}
       >
@@ -248,11 +248,11 @@ export default function SideBar() {
     <div>
       <aside
         className={`absolute font-roboto  bg-primary
-         left-0 top-0 z-50 flex h-screen w-[250px] flex-col  overflow-y-hidden  duration-300 ease-linear  lg:static lg:translate-x-0 ${
+         left-0 top-0 z-50 flex h-screen  w-72.5 flex-col  overflow-y-hidden  duration-300 ease-linear  lg:static lg:translate-x-0 ${
            sidebarOpen ? "translate-x-0" : "-translate-x-full"
          }`}
       >
-        <div className="flex items-center justify-between gap-2 px-12 py-7 lg:py-6">
+        <div className="flex items-center justify-between gap-2 px-10 py-7 lg:py-6">
           {/* { <Link href="/">
             <Image
               src="/whitelogo.png"
@@ -289,15 +289,15 @@ export default function SideBar() {
         </div>
 
         <div className="  flex flex-col overflow-y-auto ">
-          <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-8">
+          <nav className="mt-5 py-5 px-4 lg:mt-9 lg:px-7">
             <ul className="mb-6  flex flex-col gap-5">
               {LINKS.map((item, index) => (
                 <li key={index}>
                   {" "}
                   <Link
                     href={item.url}
-                    className={`group !text-base text-white  relative flex !items-center gap-2  py-2 px-4   duration-300 ease-in-out  ${
-                      pathname === item.url && " text-"
+                    className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2  text-white duration-300 ease-in-out hover:bg-[#ffffffe1] hover:text-black ${
+                      pathname === item.url && "!text-black bg-[#ffffffe1]"
                     } `}
                   >
                     <span className="">{item.icon}</span>
