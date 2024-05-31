@@ -1,5 +1,5 @@
 import React from 'react'
-import Vehiclemain from '@/components/company/vehicles/VehicleMain/vehiclemain'
+import Vehiclemain from '@/components/company/vehicles'
 
 const page = () => {
   return (

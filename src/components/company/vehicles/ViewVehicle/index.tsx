@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const ViewDetails = () => {
   return (
-    <div className='bg-gray-300 h-[95vh] w-[71rem]'>
+    <div className='bg-whiten h-[95vh] w-[71rem] p-10'>
       <h1 className='font-bold pt-2 text-3xl mx-4'>License Plate</h1> 
 
       <div className="flex gap-13 font-bold text-sm">
