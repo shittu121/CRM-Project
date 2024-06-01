@@ -50,7 +50,7 @@ const Input: React.FC<InputProps> = ({
       )}
       <div className="relative">
         <input
-          className={`px-4 py-2 bg-transparent border   rounded-md w-full outline-none   duration-75 ease-linear  disabled:bg-gray-100 ${
+          className={`px-4 py-2 bg-transparent border   rounded-md w-full outline-none  disabled:bg-gray-100 ${
             isPassword ? "pr-10" : ""
           } ${className}`}
           type={isPassword && !showPassword ? "password" : type}

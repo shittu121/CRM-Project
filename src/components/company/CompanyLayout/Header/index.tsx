@@ -5,6 +5,7 @@ import Link  from "next/link";
 import DropDownUser from "../DropDownUser";
 import { useAllContx } from "@/store/AllContext";
 import DropdownNotification from "../DropdownNotification";
+import DropdownMessage from "@/components/DropwdownMessage";
 // interface headerProps {
 //   sidebarOpen: string | boolean | undefined;
 //   setSidebarOpen: (arg0: boolean) => void;
@@ -103,20 +104,20 @@ const Header = () => {
           <ul className="flex items-center gap-2 2xsm:gap-4">
             {/* <!-- Dark Mode Toggler --> */}
             {/* <DarkModeSwitcher /> */}
-            {/* <!-- Dark Mode Toggler --> */}
+  
 
             {/* <!-- Notification Menu Area --> */}
             <DropdownNotification />
-            {/* <!-- Notification Menu Area --> */}
+            
 
             {/* <!-- Chat Notification Area --> */}
-            {/* <DropdownMessage /> */}
-            {/* <!-- Chat Notification Area --> */}
+            <DropdownMessage />
+          
           </ul>
 
           {/* <!-- User Area --> */}
           <DropDownUser />
-          {/* <!-- User Area --> */}
+    
         </div>
       </div>
     </header>

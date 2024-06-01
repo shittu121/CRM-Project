@@ -4,7 +4,7 @@ import Button from '@/components/UI/buton'
 import Entryform from '@/components/company/vehicles/NewEntryForm/index';
 import Editform from '@/components/company/vehicles/EditEntryForm/index';
 import ViewVehicleform from '@/components/company/vehicles/ViewVehicle/index'
-
+import Breadcrumb from '@/components/Breadcumb';
 interface Vehicle {
   licensePlate: string;
   make: string;
@@ -85,12 +85,12 @@ export default function VehiclePage() {
   return (
     <div className="p-4">
       <div
-        className={`absolute   right-0 top-0 z-99999 
+        className={`fixed  right-0 top-0 z-99999 
         }`}
       >
         {isEntryFormVisible && (
           <>
-            <div className=''>
+            <div className="">
               <Entryform />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -150,8 +150,10 @@ export default function VehiclePage() {
           </div>
         )}
       </div>
-      <h1 className="font-bold text-2xl -mt-2">Company Vehicles</h1>
-      <div className="relative overflow-x-auto shadow-default  rounded-lg">
+
+      <Breadcrumb pageName="Vehicle" />
+      {/* <h1 className="font-semibold text-xl mb-3">Company Vehicles</h1> */}
+      <div className="relative overflow-x-auto  rounded-lg">
         <div className="pb-4 mt-4 bg-white dark:bg-gray-900 flex flex-col sm:flex-row justify-between">
           <Button
             onClick={handleButtonNewEntry}
@@ -185,7 +187,7 @@ export default function VehiclePage() {
             />
           </div>
         </div>
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table className="w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs lg:text-sm bg-primary gap-4 lg:gap-0 text-white ">
             <tr>
               <th scope="col" className="pl-4 pr-4 py-3 whitespace-nowrap">

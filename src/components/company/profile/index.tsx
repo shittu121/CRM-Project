@@ -42,7 +42,7 @@ const Profile: React.FC = () => {
   return (
     <div className="flex flex-col items-start min-h-screen border border-stroke p-8">
       <h2 className="text-2xl font-semibold mb-6">My Profile</h2>
-      <div className="bg-white rounded-lg shadow-default p-8 w-full max-w-6xl">
+      <div className="bg-white rounded-lg  p-8 w-full max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Personal Details */}
           <div>

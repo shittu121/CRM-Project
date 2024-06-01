@@ -2,16 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .roboto {
   font-family: var(--font_montserrat);
 }
 
-.bg-auth{
+.bg-auth {
   background-position: center;
   background-size: cover;
 
   background-image: url("../../public/bg.JPG") !important;
   width: 100%;
   height: 100%;
+}
+
+.input-anime {
+  @apply transition-all duration-100 ease-linear hover:border hover:border-primary focus:ring-1 focus:ring-primary;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  right: 0;
+  left: 10;
+  backdrop-filter: blur(3px);
 }
