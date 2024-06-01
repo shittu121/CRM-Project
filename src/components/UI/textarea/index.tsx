@@ -16,7 +16,7 @@ const TextArea: React.FC<TextAreaProps> = ({ className, label, ...props }) => {
       )}
       <textarea
         {...props}
-        className={`w-full px-4 py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary ${className}`}
+        className={`w-full px-4 py-2 border border-gray-300 rounded-md resize-none outline-none  ${className}`}
       />
     </div>
   );
