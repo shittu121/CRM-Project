@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { styles } from '@/utils/styles';
 import Image from 'next/image';
-import img from "/public/whitelogo.PNG";
+//import img from "/public/whitelogo.PNG";
 import { toast } from 'sonner';
 import Input from '@/components/UI/input';
 import Button from '@/components/UI/buton';
@@ -63,7 +63,7 @@ export default function SignUp() {
           <div className="">
             <Image
               className="mx-auto"
-              src={img}
+              src="/whitelogo.PNG"
               width="150"
               height="150"
               alt="logo"
