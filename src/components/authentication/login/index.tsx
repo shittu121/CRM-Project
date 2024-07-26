@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import img from "/public/whitelogo.PNG";
+//import img from "/public/whitelogo.PNG";
 import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -55,7 +55,7 @@ export default function Login() {
         <div className="">
           <Image
             className="mx-auto"
-            src={img}
+            src="/whitelogo.PNG"
             width="150"
             height="100"
             alt="logo"
