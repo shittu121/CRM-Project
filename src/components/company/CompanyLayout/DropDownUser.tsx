@@ -110,7 +110,7 @@ export default function DropDownUser() {
         <button
           onClick={() => {
             localStorage.removeItem("token");
-            signOut();
+           // signOut();
           }}
           className="flex items-center gap-3 py-4 px-6 text-sm  duration-300 ease-in-out hover:text-emerald-deep lg:text-base"
         >
